@@ -1,0 +1,84 @@
+skills:
+  - name: OGX
+    icon: ogx.png
+    link: https://ogx-ai.github.io/
+    description: |
+      Core maintainer of OGX (Open GenAI Stack), a composable platform for building LLM applications.
+      OpenAI-compatible Responses API, multi-provider inference, vector storage, auth, and more.
+      8,000+ stars, multi-language SDKs, Kubernetes operator.
+
+  - name: AI/ML Infrastructure
+    icon: ai.svg
+    link: https://instructlab.ai/
+    description: |
+      Building production AI infrastructure: LLM serving, agentic APIs, inference gateways.
+      Contributor to InstructLab and Kubeflow. Deep expertise in model serving,
+      synthetic data generation, and evaluation pipelines.
+
+  - name: Kubernetes
+    icon: kubernetes.png
+    link: https://github.com/rook/rook
+    description: |
+      Working with Kubernetes since 2016. Built the OGX Kubernetes operator for deploying
+      AI stacks. Former Rook maintainer (2018-2023), integrating Ceph storage into Kubernetes.
+
+  - name: Open Source
+    icon: opensource.png
+    description: |
+      Lifelong Open Source advocate, running Linux since 2008. From storage to AI,
+      always building in the open. Hundreds of upstream contributions across
+      OGX, InstructLab, Kubeflow, Rook, and Ceph.
+
+  - name: Ceph & Storage
+    icon: ceph.png
+    link: https://ceph.io/en/
+    description: |
+      A decade with Ceph (2012-2023). Created ceph-ansible and ceph-container.
+      Built reference architectures for OpenStack + Ceph. Foundation that led to
+      Kubernetes storage orchestration with Rook.
+
+  - name: Public Speaking
+    icon: speaking.svg
+    description: |
+      Conferences worldwide: KubeCon, OpenStack Summit, CephDays, FOSDEM, DevOps D-Day.
+      Presentations, workshops, and panel discussions on storage, cloud-native, and AI.
+
+  - name: Publications
+    icon: writing.svg
+    description: |
+      Technical blog since 2011. 370+ posts covering Ceph, OpenStack, Containers,
+      Kubernetes, and AI/ML infrastructure.
+
+experience:
+  - company: Red Hat
+    role: Senior Principal Software Engineer
+    period: "Jun 2014 - Present"
+    logo: rh.png
+    description: |
+      Leading AI/ML open source strategy. Core maintainer of OGX and enterprise distributions
+      via OpenDataHub. Previously drove Ceph, Rook, and cloud-native storage upstream.
+      Technology evangelist through blogging and public speaking.
+
+  - company: eNovance
+    role: OpenStack Architect
+    period: "Feb 2013 - Jun 2014"
+    logo: enovance.png
+    description: |
+      Architecting and designing customer OpenStack platforms. Rotating between pre-sales,
+      consulting, benchmarking and coding. eNovance was acquired by Red Hat in 2014.
+
+  - company: Stone-IT Smile
+    role: Cloud Infrastructure Engineer
+    period: "Feb 2012 - Feb 2013"
+    logo: stone-it.jpg
+    description: |
+      Final year internship in Utrecht, Netherlands. Designed and built Cloud 2.0 infrastructure
+      with OpenStack and Ceph. Migrated the entire cloud to OpenStack backed by Ceph.
+
+  - company: SUPINFO International University
+    role: Student & Teaching Assistant
+    period: ""
+    logo: supinfo.jpg
+    description: |
+      Bachelor and master studies. Position as professor for 1st, 2nd and 3rd year students.
+      Full responsibility for SUPINFO's Linux laboratory.

@@ -1,0 +1,28 @@
+---
+title: OpenStack Cinder with Ceph under the hood
+date: 2015-01-23 11:21:00
+slug: openstack-cinder-with-ceph-under-the-hood
+draft: false
+categories: ["openstack"]
+tags: ["openstack"]
+---
+
+![OpenStack Cinder with Ceph under the hood](/images/cinder-ceph-under-the-hood.jpg)
+
+What's happening under the hood while playing with Cinder and Ceph?
+Answer table :-).
+
+<!--more-->
+
+<br />
+
+| ACTION                                                                         | RESULTS                                                                                                         |
+|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| Create a volume                                                                | New RBD image gets created in the pool configured in your cinder.conf.
+| Create a volume backup                                                         | Create a new volume in the destination pool, the first backup is a full copy, the new ones will be incremental.
+| Create a volume from a snapshot  (with rbd_flatten_volume_from_snapshot=false) | Creates a new volume. Will be a clone in Ceph and the parent will be the snapshot.
+| Create a volume from a snapshot (with rbd_flatten_volume_from_snapshot=true)   | Creates a new volume. Will be a new RBD image in Ceph.
+| Create a volume from a volume                                                  | The source volume gets snapshotted and the volume will be clone of this snapshot.
+| Create volume from image                                                       | If the image is in a Ceph pool and its location exposed then the volume will be a clone.
+| Create a snapshot                                                              | Creates an RBD snapshot.
+

@@ -1,0 +1,67 @@
+{{ define "main" }}
+<div class="blog-list-page">
+  <div class="blog-post-container">
+    {{ $paginator := .Paginate (where .Pages "Params.draft" false) }}
+    {{ range $paginator.Pages }}
+    <article class="blog-list-article">
+      <header>
+        <h2 class="blog-list-article-title">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+        <div class="blog-list-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          <span> · </span>
+          <span>{{ .ReadingTime }} min read</span>
+        </div>
+        <div class="blog-list-authors">
+          <div class="blog-list-author">
+            <a href="{{ .Site.Params.github }}">
+              <img class="blog-list-avatar" src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}">
+            </a>
+            <div class="blog-list-author-intro">
+              <div class="blog-list-author-name">
+                <a href="{{ .Site.Params.github }}">{{ .Site.Params.author }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {{ if .Summary }}
+      <p class="blog-list-excerpt">{{ .Summary | plainify | truncate 200 }}</p>
+      {{ end }}
+
+      {{ with .Params.tags }}
+      <div class="blog-list-tags">
+        <b>Tags:</b>
+        <ul class="blog-post-tags">
+          {{ range . }}
+          <li><a href="{{ "tags/" | absURL }}{{ . | urlize }}/" class="blog-tag">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+      <a href="{{ .Permalink }}" class="blog-list-read-more">Read more →</a>
+    </article>
+    {{ end }}
+
+    <nav class="blog-pagination-nav">
+      {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}" class="blog-pagination-link blog-pagination-prev">
+        <div class="blog-pagination-sublabel">Newer entries</div>
+        <div class="blog-pagination-label">&laquo; Previous page</div>
+      </a>
+      {{ else }}
+      <span></span>
+      {{ end }}
+      {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}" class="blog-pagination-link blog-pagination-next">
+        <div class="blog-pagination-sublabel">Older entries</div>
+        <div class="blog-pagination-label">Next page &raquo;</div>
+      </a>
+      {{ end }}
+    </nav>
+  </div>
+</div>
+{{ end }}

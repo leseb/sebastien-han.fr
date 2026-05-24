@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="blog-post-page">
+  <div class="blog-post-container">
+    <article>
+      <header>
+        <h1 class="blog-post-title">{{ .Title }}</h1>
+        <div class="blog-post-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          <span> · </span>
+          <span>{{ .ReadingTime }} min read</span>
+        </div>
+        <div class="blog-post-authors">
+          <div class="blog-author">
+            <a class="blog-author-photo-link" href="{{ .Site.Params.github }}">
+              <img class="blog-author-photo" src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}">
+            </a>
+            <div class="blog-author-intro">
+              <div class="blog-author-name">
+                <a href="{{ .Site.Params.github }}">{{ .Site.Params.author }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="post-body markdown">
+        {{ .Content }}
+      </div>
+
+      {{ with .Params.tags }}
+      <footer class="blog-post-footer">
+        <b>Tags:</b>
+        <ul class="blog-post-tags">
+          {{ range . }}
+          <li><a href="{{ "tags/" | absURL }}{{ . | urlize }}/" class="blog-tag">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+      </footer>
+      {{ end }}
+    </article>
+
+    <nav class="blog-pagination-nav" aria-label="Blog post page navigation">
+      {{ with .NextInSection }}
+      <a href="{{ .Permalink }}" class="blog-pagination-link blog-pagination-prev">
+        <div class="blog-pagination-sublabel">Older post</div>
+        <div class="blog-pagination-label">&laquo; {{ .Title }}</div>
+      </a>
+      {{ else }}
+      <span></span>
+      {{ end }}
+      {{ with .PrevInSection }}
+      <a href="{{ .Permalink }}" class="blog-pagination-link blog-pagination-next">
+        <div class="blog-pagination-sublabel">Newer post</div>
+        <div class="blog-pagination-label">{{ .Title }} &raquo;</div>
+      </a>
+      {{ end }}
+    </nav>
+  </div>
+</div>
+{{ end }}
