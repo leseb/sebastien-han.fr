@@ -40,7 +40,7 @@ paginate = 10
   description = "Senior Principal Software Engineer"
   avatar = "/img/avatar.png"
   github = "https://github.com/leseb"
-  linkedin = "https://www.linkedin.com/in/s%C3%A9bastien-han-2b522921"
+  linkedin = "https://www.linkedin.com/in/sebastienhan/"
   email = "han.sebastien@gmail.com"
 
 [[menus.main]]
@@ -57,7 +57,7 @@ paginate = 10
 
 [[menus.main]]
   name = "LinkedIn"
-  url = "https://www.linkedin.com/in/s%C3%A9bastien-han-2b522921"
+  url = "https://www.linkedin.com/in/sebastienhan/"
   weight = 3
   [menus.main.params]
     external = true
