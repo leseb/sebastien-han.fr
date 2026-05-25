@@ -1232,6 +1232,11 @@ pre:hover + .copy-btn,
   text-align: center;
   padding: 120px 24px;
 }
+.error-image {
+  max-width: 400px;
+  margin-bottom: 32px;
+  border-radius: 0.75rem;
+}
 .error-page h1 {
   font-size: 80px;
   font-weight: 700;
