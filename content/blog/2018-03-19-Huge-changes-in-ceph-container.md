@@ -154,7 +154,7 @@ We could go further, but we decided it was too time-consuming and the value vers
 These are just a couple of highlights, if you want to learn more, you should look into this presentation.
 So you will learn more about the new project structure, our templating mechanism, and more benefits.
 
-{{< pdf "http://www.sebastien-han.fr/down/ceph-container-reorg.pdf" >}}
+{{< pdf "/down/ceph-container-reorg.pdf" >}}
 
 
 <br />

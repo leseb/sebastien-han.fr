@@ -15,4 +15,4 @@ Video:
 
 {{< youtube ik4fvzdGbHA >}}
 
-{{< pdf "http://www.sebastien-han.fr/down/Yo%20dawg%20I%20herd%20you%20like%20Containers%2C%20so%20we%20put%20OpenStack%20and%20Ceph%20in%20Containers.pdf" >}}
+{{< pdf "/down/Yo%20dawg%20I%20herd%20you%20like%20Containers%2C%20so%20we%20put%20OpenStack%20and%20Ceph%20in%20Containers.pdf" >}}

@@ -14,6 +14,6 @@ Video:
 {{< youtube 5Wqb5sZG11I >}}
 
 
-{{< pdf "http://www.sebastien-han.fr/down/Tokyo%20summit-%20OpenStack%20and%20Ceph.pdf" >}}
+{{< pdf "/down/Tokyo%20summit-%20OpenStack%20and%20Ceph.pdf" >}}
 
-Download the slides [here](http://www.sebastien-han.fr/down/Tokyo%20summit-%20OpenStack%20and%20Ceph.pdf).
+Download the slides [here](/down/Tokyo%20summit-%20OpenStack%20and%20Ceph.pdf).

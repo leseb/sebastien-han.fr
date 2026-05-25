@@ -17,4 +17,4 @@ Video, my talk starts at 22 minutes:
 
 If the slides don't render properly in the web viewer, please download them:
 
-{{< pdf "http://www.sebastien-han.fr/down/KubeCon_San_Diego_Ceph_Deep_Dive.pdf" >}}
+{{< pdf "/down/KubeCon_San_Diego_Ceph_Deep_Dive.pdf" >}}

@@ -15,4 +15,4 @@ Video:
 
 {{< youtube n2S7uNC_KMw >}}
 
-{{< pdf "http://www.sebastien-han.fr/down/How_to_Survive_an_OpenStack_Cloud_Meltdown_with_Ceph_-_Vancouver_Summit_2018.pdf" >}}
+{{< pdf "/down/How_to_Survive_an_OpenStack_Cloud_Meltdown_with_Ceph_-_Vancouver_Summit_2018.pdf" >}}

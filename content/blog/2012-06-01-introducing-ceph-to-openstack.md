@@ -1930,7 +1930,7 @@ ubuntu@instance-over-rbd:~$ for ((i=0 ; 10 -$i ; i++)) ; do dd if=/dev/zero of=p
 
 Benchmark your filesystem in order to detect I/O errors (ext4 oriented):
 
-```c I/O stress http://sebastien-han.fr/down/io.c Download me
+```c I/O stress /down/io.c Download me
 /*
  * Copyright (C) 2010 Canonical
  *

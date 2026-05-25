@@ -15,4 +15,4 @@ Video:
 
 {{< youtube pNz0UyaqlE8 >}}
 
-{{< pdf "http://www.sebastien-han.fr/down/Rook_Ceph_and_ARM_The_caffeinated_tutorial.pdf" >}}
+{{< pdf "/down/Rook_Ceph_and_ARM_The_caffeinated_tutorial.pdf" >}}

@@ -17,4 +17,4 @@ Video:
 
 {{< youtube 4V8ZTCBb2iE >}}
 
-{{< pdf "http://www.sebastien-han.fr/down/Deterministic_Storage_Performance_-_The_AWS_Way_for_capacity_based_QoS_with_OpenStack_and_Ceph_-_OS_SUMMIT17.pdf" >}}
+{{< pdf "/down/Deterministic_Storage_Performance_-_The_AWS_Way_for_capacity_based_QoS_with_OpenStack_and_Ceph_-_OS_SUMMIT17.pdf" >}}

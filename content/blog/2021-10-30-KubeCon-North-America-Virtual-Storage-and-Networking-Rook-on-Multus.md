@@ -15,4 +15,4 @@ Date: 14/10/21
 
 If the slides don't render properly in the web viewer, please download them:
 
-{{< pdf "http://www.sebastien-han.fr/down/Storage_and_networking_Rook-Ceph_on_Multus_SebastienHan_RohanGupta_101321_v1.pdf" >}}
+{{< pdf "/down/Storage_and_networking_Rook-Ceph_on_Multus_SebastienHan_RohanGupta_101321_v1.pdf" >}}

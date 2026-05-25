@@ -15,4 +15,4 @@ Video:
 
 {{< youtube A4l3vPMaJew >}}
 
-{{< pdf "http://www.sebastien-han.fr/down/Distributed_HyperConvergence_Pushing_Openstack_and_Ceph_to_the_Edge.pdf" >}}
+{{< pdf "/down/Distributed_HyperConvergence_Pushing_Openstack_and_Ceph_to_the_Edge.pdf" >}}

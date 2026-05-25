@@ -15,4 +15,4 @@ Video:
 
 Slides:
 
-Download the slides [here](http://www.sebastien-han.fr/down/OpenStack%20_%20Ceph%20-%20Liberty.pdf).
+Download the slides [here](/down/OpenStack%20_%20Ceph%20-%20Liberty.pdf).

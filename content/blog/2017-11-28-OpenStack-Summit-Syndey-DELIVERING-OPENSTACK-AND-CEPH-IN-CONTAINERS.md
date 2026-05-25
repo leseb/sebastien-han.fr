@@ -17,4 +17,4 @@ Video:
 
 {{< youtube KX7EraCUxas >}}
 
-{{< pdf "http://www.sebastien-han.fr/down/Delivering_OpenStack_and_Ceph_in_Containers.pdf" >}}
+{{< pdf "/down/Delivering_OpenStack_and_Ceph_in_Containers.pdf" >}}

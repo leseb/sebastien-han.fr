@@ -11,4 +11,4 @@ My latest presentation of `cn` (ceph nano) that I gave at the French Ceph Meetup
 
 <!--more-->
 
-{{< pdf "http://www.sebastien-han.fr/down/cn-ceph-meetup-paris.pdf" >}}
+{{< pdf "/down/cn-ceph-meetup-paris.pdf" >}}

@@ -15,4 +15,4 @@ Video:
 
 {{< youtube mo-u9rxuM2Y >}}
 
-{{< pdf "http://www.sebastien-han.fr/down/Rook_and_Ceph_101-Open_Infrastructure_Denver.pdf" >}}
+{{< pdf "/down/Rook_and_Ceph_101-Open_Infrastructure_Denver.pdf" >}}

@@ -15,4 +15,4 @@ Date: 20/08/20
 
 If the slides don't render properly in the web viewer, please download them:
 
-{{< pdf "http://www.sebastien-han.fr/down/Virtual_KubeCon_2020_Rook_Ceph_Deep_Dive.pdf" >}}
+{{< pdf "/down/Virtual_KubeCon_2020_Rook_Ceph_Deep_Dive.pdf" >}}
