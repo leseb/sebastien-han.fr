@@ -1,15 +1,15 @@
 {{ define "main" }}
 <div class="blog-post-page">
   <div class="blog-post-container">
-    <article>
+    <article data-pagefind-body>
       <header>
         <h1 class="blog-post-title">{{ .Title }}</h1>
         <div class="blog-post-meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          <time datetime="{{ .Date.Format "2006-01-02" }}" data-pagefind-meta="date">{{ .Date.Format "January 2, 2006" }}</time>
           <span> · </span>
           <span>{{ .ReadingTime }} min read</span>
         </div>
-        <div class="blog-post-authors">
+        <div class="blog-post-authors" data-pagefind-ignore>
           <div class="blog-author">
             <a class="blog-author-photo-link" href="{{ .Site.Params.github }}">
               <img class="blog-author-photo" src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}">

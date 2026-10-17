@@ -9,7 +9,9 @@
     {{- block "main" . }}{{ end -}}
   </main>
   {{- partial "footer.html" . -}}
+  {{- partial "search.html" . -}}
   {{- block "scripts" . }}{{ end -}}
   <script src="/js/main.js"></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>
