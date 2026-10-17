@@ -7,8 +7,6 @@ categories: ["presentation"]
 tags: ["presentation"]
 ---
 
-![Red Hat Summit San Francisco](/images/red-hat-summit-2018-sf.png)
-
 I will be attending the Red Hat summit as I'm co-presenting a lab.
 This goal of the lab is to deploy an OpenStack Hyperconverged environment (HCI) with Ceph.
 
