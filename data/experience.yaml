@@ -1,4 +1,20 @@
 skills:
+  - name: Praxis
+    icon: praxis.svg
+    link: https://praxis.fast/
+    description: |
+      Maintainer of Praxis Core and Praxis AI. Building a programmable proxy framework
+      in Rust and an AI gateway for model and agent traffic, with provider-aware routing,
+      protocol translation, and composable request pipelines.
+
+  - name: Rook
+    icon: rook.svg
+    link: https://rook.io/
+    description: |
+      Maintainer Emeritus after several years maintaining Rook, a CNCF graduated project.
+      Helped bring Ceph storage to Kubernetes through automated deployment,
+      scaling, upgrades, and recovery.
+
   - name: OGX
     icon: ogx.png
     link: https://ogx-ai.github.io/
@@ -20,14 +36,14 @@ skills:
     link: https://github.com/rook/rook
     description: |
       Working with Kubernetes since 2016. Built the OGX Kubernetes operator for deploying
-      AI stacks. Former Rook maintainer (2018-2023), integrating Ceph storage into Kubernetes.
+      AI stacks. Integrated Ceph storage into Kubernetes through Rook.
 
   - name: Open Source
     icon: opensource.png
     description: |
       Lifelong Open Source advocate, running Linux since 2008. From storage to AI,
       always building in the open. Hundreds of upstream contributions across
-      OGX, InstructLab, Kubeflow, Rook, and Ceph.
+      Praxis, OGX, InstructLab, Kubeflow, Rook, and Ceph.
 
   - name: Ceph & Storage
     icon: ceph.png
