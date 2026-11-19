@@ -2,6 +2,8 @@
   Falls back to .fallback when the request fails (offline, rate-limited). */ -}}
 {{- $stars := .fallback | default 0 -}}
 {{- $headers := dict "Accept" "application/vnd.github+json" -}}
+{{- /* CI runners share IPs, so unauthenticated calls get 403; use the workflow token when present. */ -}}
+{{- with os.Getenv "GITHUB_TOKEN" }}{{ $headers = merge $headers (dict "Authorization" (printf "Bearer %s" .)) }}{{ end -}}
 {{- with try (resources.GetRemote (printf "https://api.github.com/repos/%s" .repo) (dict "headers" $headers)) -}}
   {{- with .Err -}}
     {{- warnf "github-stars: %s" . -}}

@@ -61,3 +61,7 @@ paginate = 10
   weight = 3
   [menus.main.params]
     external = true
+
+[security]
+  [security.funcs]
+    getenv = ['^HUGO_', '^CI$', '^GITHUB_TOKEN$']
