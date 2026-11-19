@@ -1,0 +1,12 @@
+{{- /* Fetch a repo's star count from the GitHub API at build time.
+  Falls back to .fallback when the request fails (offline, rate-limited). */ -}}
+{{- $stars := .fallback | default 0 -}}
+{{- $headers := dict "Accept" "application/vnd.github+json" -}}
+{{- with try (resources.GetRemote (printf "https://api.github.com/repos/%s" .repo) (dict "headers" $headers)) -}}
+  {{- with .Err -}}
+    {{- warnf "github-stars: %s" . -}}
+  {{- else with .Value -}}
+    {{- with (. | transform.Unmarshal).stargazers_count }}{{ $stars = int . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $stars -}}

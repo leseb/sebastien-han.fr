@@ -11,3 +11,14 @@
     <div class="search-status" id="searchStatus" aria-live="polite">Start typing to search {{ $count }} posts.</div>
   </div>
 </div>
+{{- $actions := slice
+  (dict "label" "Go to Expertise" "hint" "Section" "url" "/#expertise")
+  (dict "label" "Go to Experience" "hint" "Section" "url" "/#experience")
+  (dict "label" "Go to talks" "hint" "Section" "url" "/#talks")
+  (dict "label" "Browse all blog posts" "hint" "Page" "url" "/blog/")
+  (dict "label" "Open GitHub" "hint" "External" "url" .Site.Params.github "external" true)
+  (dict "label" "Open LinkedIn" "hint" "External" "url" .Site.Params.linkedin "external" true)
+  (dict "label" "Subscribe via RSS" "hint" "Feed" "url" "/blog/atom.xml")
+  (dict "label" "Run ceph -s" "hint" "Easter egg" "url" "/#ceph")
+}}
+<script type="application/json" id="searchActions">{{ $actions | jsonify | safeJS }}</script>

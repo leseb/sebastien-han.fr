@@ -1,0 +1,95 @@
+# Conference talks. `post` is the blog post file name (without .md), `pdf` is under /static/down/.
+- event: KubeCon NA
+  year: 2021
+  where: Virtual
+  title: "Storage and Networking: Rook on Multus"
+  post: 2021-10-30-KubeCon-North-America-Virtual-Storage-and-Networking-Rook-on-Multus
+  pdf: Storage_and_networking_Rook-Ceph_on_Multus_SebastienHan_RohanGupta_101321_v1.pdf
+- event: DevOps D-Day
+  year: 2021
+  where: Marseille
+  title: "Rook-Ceph, a storage orchestrator for Kubernetes"
+  post: 2021-11-16-Devops-D-Day-Rook-Ceph-a-storage-Orchestrator-for-Kubernetes
+  pdf: devops-d-day-18-11-2021.pdf
+- event: KubeCon EU
+  year: 2020
+  where: Virtual
+  title: "Rook Ceph Deep Dive"
+  post: 2020-08-24-KubeCon-Amsterdam-Virtual-Rook-Ceph-Deep-Dive
+  pdf: Virtual_KubeCon_2020_Rook_Ceph_Deep_Dive.pdf
+- event: KubeCon NA
+  year: 2019
+  where: San Diego
+  title: "Rook Deep Dive"
+  post: 2019-11-25-KubeCon-San-Diego-Rook-Deep-Dive
+  pdf: KubeCon_San_Diego_Ceph_Deep_Dive.pdf
+- event: KubeCon EU
+  year: 2019
+  where: Barcelona
+  title: "Rook, Ceph, and ARM: a caffeinated tutorial"
+  post: 2019-05-25-KubeCon-Barcelona-Rook-Ceph-and-ARM-A-Caffeinated-Tutorial
+  pdf: Rook_Ceph_and_ARM_The_caffeinated_tutorial.pdf
+- event: Open Infra Summit
+  year: 2019
+  where: Denver
+  title: "Rook 101"
+  post: 2019-04-30-OpenStack-Summit-Denver-Rook-101
+  pdf: Rook_and_Ceph_101-Open_Infrastructure_Denver.pdf
+- event: OpenStack Summit
+  year: 2018
+  where: Berlin
+  title: "Distributed hyperconvergence: OpenStack and Ceph at the edge"
+  post: 2018-11-22-OpenStack-Summit-Berlin-Distributed-Hyperconvergence-Pushing-Openstack-and-Ceph-to-the-Edge
+  pdf: Distributed_HyperConvergence_Pushing_Openstack_and_Ceph_to_the_Edge.pdf
+- event: Ceph Meetup
+  year: 2018
+  where: Paris
+  title: "cn: Ceph Nano"
+  post: 2018-11-22-Ceph-meetup-Paris
+  pdf: cn-ceph-meetup-paris.pdf
+- event: OpenStack Summit
+  year: 2018
+  where: Vancouver
+  title: "How to survive an OpenStack cloud meltdown with Ceph"
+  post: 2018-05-24-OpenStack-Summit-Vancouver-How-to-Survive-an-OpenStack-Cloud-Meltdown-with-Ceph
+  pdf: How_to_Survive_an_OpenStack_Cloud_Meltdown_with_Ceph_-_Vancouver_Summit_2018.pdf
+- event: OpenStack Summit
+  year: 2017
+  where: Sydney
+  title: "Delivering OpenStack and Ceph in containers"
+  post: 2017-11-28-OpenStack-Summit-Syndey-DELIVERING-OPENSTACK-AND-CEPH-IN-CONTAINERS
+  pdf: Delivering_OpenStack_and_Ceph_in_Containers.pdf
+- event: OpenStack Summit
+  year: 2017
+  where: Boston
+  title: "Deterministic storage performance"
+  post: 2017-05-08-OpenStack-Summit-Boston-Deterministic-Storage-Performance
+  pdf: Deterministic_Storage_Performance_-_The_AWS_Way_for_capacity_based_QoS_with_OpenStack_and_Ceph_-_OS_SUMMIT17.pdf
+- event: OpenStack Summit
+  year: 2016
+  where: Barcelona
+  title: "Yo dawg, I herd you like containers"
+  post: 2016-10-30-OpenStack-Summit-Barcelona-Yo-dawg-I-herd-you-like-Containers-so-we-put-OpenStack-and-Ceph-in-Containers
+  pdf: "Yo dawg I herd you like Containers, so we put OpenStack and Ceph in Containers.pdf"
+- event: Red Hat Summit
+  year: 2016
+  where: San Francisco
+  title: "Peanut butter and jelly: OpenStack and Ceph"
+  post: 2016-07-05-Red-Hat-Summit-2016-Peanut-butter-and-jelly-Mapping-the-deep-integration-between-OpenStack-and-Ceph
+- event: Red Hat Summit
+  year: 2016
+  where: San Francisco
+  title: "A container stack for OpenStack"
+  post: 2016-06-30-Red-Hat-Summit-2016-A-Container-Stack-for-OpenStack
+- event: OpenStack Summit
+  year: 2015
+  where: Tokyo
+  title: "Ceph and OpenStack: current integration and roadmap"
+  post: 2015-11-16-openstack-summit-tokyo-ceph-and-openstack-current-integration-and-roadmap
+  pdf: "Tokyo summit- OpenStack and Ceph.pdf"
+- event: OpenStack Summit
+  year: 2015
+  where: Vancouver
+  title: "Ceph and OpenStack: current integration and roadmap"
+  post: 2015-05-19-openstack-summit-vancouver-ceph-and-openstack-current-integration-and-roadmap
+  pdf: "OpenStack _ Ceph - Liberty.pdf"

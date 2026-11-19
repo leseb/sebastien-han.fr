@@ -1,6 +1,6 @@
 ---
 title: Ceph ansible now supports dmcrypt
-date: 
+date: 2016-08-09 00:00:00
 slug: Ceph-ansible-now-supports-dmcrypt
 draft: false
 categories: ["ansible"]

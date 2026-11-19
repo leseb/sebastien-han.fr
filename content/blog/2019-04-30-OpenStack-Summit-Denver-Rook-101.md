@@ -1,6 +1,6 @@
 ---
 title: "Open Infrastructure Summit Denver: Rook 101"
-date: 
+date: 2019-04-30 00:00:00
 slug: OpenStack-Summit-Denver-Rook-101
 draft: false
 categories: ["presentation"]

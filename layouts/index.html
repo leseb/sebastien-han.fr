@@ -1,64 +1,186 @@
 {{ define "main" }}
-<section class="hero">
-  <canvas id="noise"></canvas>
+{{- $posts := where site.RegularPages "Section" "blog" -}}
+{{- $talks := hugo.Data.talks -}}
+{{- $ogxStars := partial "github-stars.html" (dict "repo" "ogx-ai/ogx" "fallback" 8400) -}}
+
+<section class="hero" id="top">
+  <canvas id="hero-net" aria-hidden="true"></canvas>
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <h1 class="hero-name">{{ .Site.Params.author }}</h1>
-      <p class="hero-tagline">Senior Principal Software Engineer, based in Marseille, France</p>
-      <div class="hero-links">
-        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" class="hero-link">
-          <svg viewBox="0 0 16 16" width="18" height="18"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <p class="hero-eyebrow"><span class="hero-dot"></span>Marseille · 43.30°N 5.37°E</p>
+      <h1 class="hero-name" aria-label="{{ .Site.Params.author }}">
+        <span class="hero-name-line" data-proximity>Sébastien</span>
+        <span class="hero-name-line hero-name-accent" data-proximity>Han</span>
+      </h1>
+      <p class="hero-tagline">
+        I build
+        <span class="typer" data-words='["AI gateways in Rust","agentic APIs for LLMs","storage for Kubernetes","open source communities"]'>AI gateways in Rust</span><span class="typer-caret" aria-hidden="true"></span>
+      </p>
+      <p class="hero-role">Senior Principal Software Engineer at Red Hat</p>
+      <div class="hero-cta">
+        <a href="/blog/" class="btn btn-primary">Read the blog <span aria-hidden="true">→</span></a>
+        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           GitHub
         </a>
-        <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener" class="hero-link">
-          <svg viewBox="0 0 16 16" width="18" height="18"><path fill="currentColor" d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.616 1.377-1.376 1.377zm1.188 8.68H2.372V6h2.374v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z"/></svg>
+        <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.616 1.377-1.376 1.377zm1.188 8.68H2.372V6h2.374v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z"/></svg>
           LinkedIn
         </a>
       </div>
     </div>
-    <img src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}" class="hero-avatar">
+    <div class="hero-avatar-wrap">
+      <div class="hero-avatar-ring" aria-hidden="true"></div>
+      <img src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}" class="hero-avatar">
+    </div>
   </div>
+
+  <dl class="hero-stats">
+    <div class="stat"><dt>Blog posts</dt><dd><span data-count="{{ len $posts }}">{{ len $posts }}</span></dd></div>
+    <div class="stat"><dt>Years of Linux</dt><dd><span data-count="{{ sub now.Year 2008 }}">{{ sub now.Year 2008 }}</span></dd></div>
+    <div class="stat"><dt>OGX stars</dt><dd><span data-count="{{ $ogxStars }}">{{ lang.FormatNumberCustom 0 $ogxStars }}</span><span class="stat-unit">★</span></dd></div>
+    <div class="stat"><dt>Conference talks</dt><dd><span data-count="{{ len $talks }}">{{ len $talks }}</span>+</dd></div>
+    <div class="stat"><dt>Rook</dt><dd class="stat-word">CNCF graduated</dd></div>
+  </dl>
+
+  <a href="#expertise" class="hero-scroll" aria-label="Scroll to expertise"><span></span></a>
 </section>
 
-<section class="skills-section spring-section">
+<section class="land-section spring-section" id="expertise">
   <div class="section-container">
-    <h2 class="section-heading spring-target">Expertise</h2>
-    <div class="skills-list">
-      {{ range hugo.Data.experience.skills }}
-      <div class="skill-entry spring-target">
-        <img src="/img/{{ .icon }}" alt="" class="skill-icon spring-icon">
-        <div class="skill-body">
+    <h2 class="section-heading spring-target"><span class="section-num">01 /</span> Expertise</h2>
+    {{ range slice (dict "key" "now" "label" "Now" "sub" "AI infrastructure, in the open") (dict "key" "foundations" "label" "Foundations" "sub" "A decade of distributed storage") (dict "key" "always" "label" "Always" "sub" "The constants") }}
+    {{ $group := .key }}
+    <div class="bento-group">
+      <p class="bento-label spring-target"><span>{{ .label }}</span> {{ .sub }}</p>
+      <div class="bento">
+        {{ range where hugo.Data.experience.skills "group" $group }}
+        {{ $stars := 0 }}
+        {{ with .repo }}{{ $stars = partial "github-stars.html" (dict "repo" . "fallback" 0) }}{{ end }}
+        <article class="bento-card spring-target" style="--span: {{ .span | default 2 }}; --card-color: {{ .color | default "var(--accent)" | safeCSS }}">
+          <div class="bento-top">
+            <img src="/img/{{ .icon }}" alt="" class="bento-icon spring-icon">
+            {{ if gt $stars 0 }}
+            <a class="bento-stars" href="https://github.com/{{ .repo }}" target="_blank" rel="noopener" aria-label="{{ .repo }} on GitHub">
+              <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path fill="currentColor" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></svg>
+              {{ if ge $stars 1000 }}{{ lang.FormatNumber 1 (div (float $stars) 1000) }}k{{ else }}{{ $stars }}{{ end }}
+            </a>
+            {{ end }}
+          </div>
           <h3>{{ with .link }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ .name }}{{ with .link }}</a>{{ end }}</h3>
           <p>{{ .description }}</p>
-        </div>
+        </article>
+        {{ end }}
       </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<section class="land-section spring-section" id="experience">
+  <div class="section-container">
+    <h2 class="section-heading spring-target"><span class="section-num">02 /</span> Experience</h2>
+    <ol class="timeline" data-timeline>
+      {{ range hugo.Data.experience.experience }}
+      {{- $start := time (printf "%s-01" .start) -}}
+      {{- $end := now -}}
+      {{- with .end }}{{ $end = time (printf "%s-01" .) }}{{ end -}}
+      {{- $span := sub $end.Unix $start.Unix -}}
+      {{- $jobPosts := where (where $posts "Date" "ge" $start) "Date" "lt" $end -}}
+      <li class="tl-entry spring-target">
+        <div class="tl-marker"><img src="/img/{{ .logo }}" alt="{{ .company }}"></div>
+        <div class="tl-body">
+          <div class="tl-top">
+            <h3>{{ .company }}</h3>
+            {{ with .period }}<span class="tl-period">{{ . }}</span>{{ end }}
+          </div>
+          {{ with .role }}<p class="tl-role">{{ . }}</p>{{ end }}
+          <p class="tl-desc">{{ .description }}</p>
+          {{ with $jobPosts }}
+          <div class="tl-posts" aria-label="{{ len . }} blog posts written during this period">
+            <div class="tl-ticks" aria-hidden="true">
+              {{ range . }}<i style="left: {{ div (mul 100.0 (sub .Date.Unix $start.Unix)) $span }}%"></i>{{ end }}
+            </div>
+            <span class="tl-count">{{ len . }} post{{ if ne (len .) 1 }}s{{ end }} written</span>
+          </div>
+          {{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+
+<section class="land-section spring-section" id="talks">
+  <div class="section-container">
+    <h2 class="section-heading spring-target"><span class="section-num">03 /</span> On stage</h2>
+    <p class="section-lede spring-target">Summits, KubeCons and meetups, slides included.</p>
+    <div class="talks">
+      {{ range $talks }}
+      {{ $p := site.GetPage (printf "/blog/%s" .post) }}
+      <a class="talk spring-target" href="{{ with $p }}{{ .RelPermalink }}{{ else }}{{ with $.pdf }}/down/{{ . }}{{ end }}{{ end }}">
+        <span class="talk-event">{{ .event }}</span>
+        <span class="talk-where">{{ .where }} · {{ .year }}</span>
+        <span class="talk-title">{{ .title }}</span>
+        {{ with .pdf }}<span class="talk-pdf">PDF</span>{{ end }}
+      </a>
       {{ end }}
     </div>
   </div>
 </section>
 
-<section class="experience-section spring-section">
+<section class="land-section spring-section" id="writing">
   <div class="section-container">
-    <h2 class="section-heading spring-target">Experience</h2>
-    <div class="experience-list">
-      {{ range hugo.Data.experience.experience }}
-      <div class="exp-entry spring-target">
-        <div class="exp-marker">
-          <img src="/img/{{ .logo }}" alt="{{ .company }}">
-        </div>
-        <div class="exp-body">
-          <div class="exp-top">
-            <h3>{{ .company }}</h3>
-            {{ with .period }}<span class="exp-period">{{ . }}</span>{{ end }}
-          </div>
-          {{ with .role }}<p class="exp-role">{{ . }}</p>{{ end }}
-          <p class="exp-desc">{{ .description }}</p>
-        </div>
+    <h2 class="section-heading spring-target"><span class="section-num">04 /</span> Writing</h2>
+    <p class="section-lede spring-target">{{ len $posts }} posts on Ceph, OpenStack, Kubernetes and everything in between. Each square is a month.</p>
+
+    {{- $counts := newScratch -}}
+    {{- range $posts }}{{ $counts.Add (.Date.Format "2006-01") 1 }}{{ end -}}
+    {{- $first := (index ($posts.ByDate) 0).Date.Year -}}
+    {{- $last := (index ($posts.ByDate.Reverse) 0).Date.Year -}}
+    <div class="writing-grid">
+    <div class="heatmap spring-target" role="img" aria-label="Blog posts per month, {{ $first }} to {{ $last }}">
+      <div class="heatmap-months" aria-hidden="true">
+        <span></span>{{ range slice "J" "F" "M" "A" "M" "J" "J" "A" "S" "O" "N" "D" }}<span>{{ . }}</span>{{ end }}
+      </div>
+      {{ range seq $first $last }}
+      {{ $y := . }}
+      <div class="heatmap-row">
+        <span class="heatmap-year">{{ $y }}</span>
+        {{ range seq 1 12 }}
+        {{ $k := printf "%d-%02d" $y . }}
+        {{ $n := $counts.Get $k | default 0 }}
+        {{ $lvl := 0 }}{{ if ge $n 1 }}{{ $lvl = 1 }}{{ end }}{{ if ge $n 3 }}{{ $lvl = 2 }}{{ end }}{{ if ge $n 6 }}{{ $lvl = 3 }}{{ end }}{{ if ge $n 10 }}{{ $lvl = 4 }}{{ end }}
+        <i class="l{{ $lvl }}" title="{{ $k }}: {{ $n }} post{{ if ne $n 1 }}s{{ end }}"></i>
+        {{ end }}
       </div>
       {{ end }}
     </div>
+
+    <div class="latest">
+      {{ range first 3 $posts.ByDate.Reverse }}
+      <a class="latest-card spring-target" href="{{ .RelPermalink }}">
+        <span class="latest-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+        <span class="latest-title">{{ .Title }}</span>
+        {{ with .Params.categories }}<span class="latest-cat">{{ index . 0 }}</span>{{ end }}
+        <span class="latest-arrow" aria-hidden="true">→</span>
+      </a>
+      {{ end }}
+    </div>
+    </div>
+    <p class="latest-more spring-target"><a href="/blog/">All {{ len $posts }} posts <span aria-hidden="true">→</span></a> <span class="latest-hint">or press <kbd>⌘K</kbd> to search</span></p>
   </div>
 </section>
-<script src="/js/noise.js" defer></script>
+
+<div class="ceph-term" id="cephTerm" hidden role="dialog" aria-label="ceph status">
+  <div class="ceph-term-win">
+    <div class="ceph-term-bar"><i></i><i></i><i></i><span>leseb@marseille: ~</span></div>
+    <pre class="ceph-term-body"></pre>
+  </div>
+</div>
+
+<script src="/js/hero.js" defer></script>
 <script src="/js/spring.js" defer></script>
+<script src="/js/landing.js" defer></script>
 {{ end }}

@@ -64,10 +64,7 @@
 
     if (!query) {
       ++searchToken; // invalidate any in-flight search
-      activeIndex = -1;
-      results.innerHTML = "";
-      input.removeAttribute("aria-activedescendant");
-      setExpanded(false);
+      renderActions();
       setStatus(defaultStatus);
       return;
     }
@@ -157,6 +154,39 @@
     }
   }
 
+  // Quick actions shown while the query is empty, so ⌘K doubles as a command menu.
+  var actions = [];
+  function renderActions() {
+    results.innerHTML = "";
+    activeIndex = -1;
+    input.removeAttribute("aria-activedescendant");
+    actions.forEach(function (act, i) {
+      var li = document.createElement("li");
+      li.className = "search-result search-action";
+      li.setAttribute("role", "option");
+      li.id = "search-result-" + i;
+      li.setAttribute("aria-selected", "false");
+      var a = document.createElement("a");
+      a.href = act.url;
+      a.className = "search-result-link";
+      a.tabIndex = -1;
+      if (act.external) { a.target = "_blank"; a.rel = "noopener"; }
+      var title = document.createElement("span");
+      title.className = "search-result-title";
+      title.textContent = act.label;
+      var hint = document.createElement("span");
+      hint.className = "search-action-hint";
+      hint.textContent = act.hint || "";
+      a.appendChild(title);
+      a.appendChild(hint);
+      a.addEventListener("click", function () { close(); });
+      li.appendChild(a);
+      li.addEventListener("mouseenter", function () { if (pointerMoved) setActive(i); });
+      results.appendChild(li);
+    });
+    setExpanded(actions.length > 0);
+  }
+
   function setActive(i) {
     var items = results.querySelectorAll(".search-result");
     if (!items.length) { activeIndex = -1; return; }
@@ -179,7 +209,7 @@
     var items = results.querySelectorAll(".search-result");
     if (activeIndex < 0 || !items[activeIndex]) return;
     var link = items[activeIndex].querySelector("a");
-    if (link) window.location.href = link.href;
+    if (link) link.click();
   }
 
   function open() {
@@ -188,6 +218,7 @@
     modal.hidden = false;
     document.body.classList.add("search-open");
     loadPagefind();
+    renderActions();
     input.focus();              // move focus into the dialog first...
     setBackgroundInert(true);   // ...then isolate the background
   }
@@ -260,6 +291,8 @@
     status = document.getElementById("searchStatus");
     if (!modal || !input || !results || !status) return;
     defaultStatus = status.textContent.trim();
+    var actionsEl = document.getElementById("searchActions");
+    if (actionsEl) { try { actions = JSON.parse(actionsEl.textContent) || []; } catch (e) { actions = []; } }
     bgRegions = Array.prototype.slice.call(document.querySelectorAll("body > header, body > main, body > footer"));
 
     // Label the keyboard hint for the platform

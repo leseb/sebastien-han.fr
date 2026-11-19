@@ -1,5 +1,9 @@
 skills:
   - name: Praxis
+    group: now
+    span: 3
+    repo: praxis-proxy/praxis
+    color: "oklch(0.72 0.17 250)"
     icon: praxis.svg
     link: https://praxis.fast/
     description: |
@@ -8,6 +12,10 @@ skills:
       protocol translation, and composable request pipelines.
 
   - name: Rook
+    group: foundations
+    span: 2
+    repo: rook/rook
+    color: "oklch(0.72 0.13 230)"
     icon: rook.svg
     link: https://rook.io/
     description: |
@@ -16,6 +24,10 @@ skills:
       scaling, upgrades, and recovery.
 
   - name: OGX
+    group: now
+    span: 3
+    repo: ogx-ai/ogx
+    color: "oklch(0.78 0.14 175)"
     icon: ogx.png
     link: https://ogx-ai.github.io/
     description: |
@@ -24,6 +36,10 @@ skills:
       8,000+ stars, multi-language SDKs, Kubernetes operator.
 
   - name: AI/ML Infrastructure
+    group: now
+    span: 6
+    repo: instructlab/instructlab
+    color: "oklch(0.75 0.15 300)"
     icon: ai.svg
     link: https://instructlab.ai/
     description: |
@@ -32,6 +48,9 @@ skills:
       synthetic data generation, and evaluation pipelines.
 
   - name: Kubernetes
+    group: foundations
+    span: 2
+    color: "oklch(0.65 0.16 260)"
     icon: kubernetes.png
     link: https://github.com/rook/rook
     description: |
@@ -39,6 +58,9 @@ skills:
       AI stacks. Integrated Ceph storage into Kubernetes through Rook.
 
   - name: Open Source
+    group: always
+    span: 3
+    color: "oklch(0.78 0.15 140)"
     icon: opensource.png
     description: |
       Lifelong Open Source advocate, running Linux since 2008. From storage to AI,
@@ -46,6 +68,10 @@ skills:
       Praxis, OGX, InstructLab, Kubeflow, Rook, and Ceph.
 
   - name: Ceph & Storage
+    group: foundations
+    span: 2
+    repo: ceph/ceph
+    color: "oklch(0.68 0.19 25)"
     icon: ceph.png
     link: https://ceph.io/en/
     description: |
@@ -54,6 +80,9 @@ skills:
       Kubernetes storage orchestration with Rook.
 
   - name: Public Speaking
+    group: always
+    span: 3
+    color: "oklch(0.78 0.14 75)"
     icon: speaking.svg
     description: |
       Conferences worldwide: KubeCon, OpenStack Summit, CephDays, FOSDEM, DevOps D-Day.
@@ -67,6 +96,8 @@ skills:
 
 experience:
   - company: Red Hat
+    start: "2014-06"
+    end: ""
     role: Senior Principal Software Engineer
     period: "Jun 2014 - Present"
     logo: rh.png
@@ -76,6 +107,8 @@ experience:
       Technology evangelist through blogging and public speaking.
 
   - company: eNovance
+    start: "2013-02"
+    end: "2014-06"
     role: OpenStack Architect
     period: "Feb 2013 - Jun 2014"
     logo: enovance.png
@@ -84,6 +117,8 @@ experience:
       consulting, benchmarking and coding. eNovance was acquired by Red Hat in 2014.
 
   - company: Stone-IT Smile
+    start: "2012-02"
+    end: "2013-02"
     role: Cloud Infrastructure Engineer
     period: "Feb 2012 - Feb 2013"
     logo: stone-it.jpg
@@ -92,6 +127,8 @@ experience:
       with OpenStack and Ceph. Migrated the entire cloud to OpenStack backed by Ceph.
 
   - company: SUPINFO International University
+    start: "2008-09"
+    end: "2012-02"
     role: Student & Teaching Assistant
     period: ""
     logo: supinfo.jpg
